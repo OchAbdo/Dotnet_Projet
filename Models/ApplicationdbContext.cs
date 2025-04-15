@@ -9,5 +9,6 @@ namespace Projet.Models
         }
 
         public DbSet<Utilisateur> utilisateurs { get; set; }
+        public DbSet<Project>projet { get; set;}
     }
 }

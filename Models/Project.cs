@@ -1,6 +1,6 @@
 ﻿namespace Projet.Models
 {
-    public class Projet
+    public class Project
     {
         public long id { set; get; }
         public string titre { set; get; }

@@ -8,11 +8,13 @@ namespace Projet.Repositories.Repositories
         private readonly ApplicationdbContext _context;
 
         public GenericRepositoryC<Utilisateur> users { get; private set; }
+        public GenericRepositoryC<Project> projets { get; private set; }
 
         public UnitOfWork(ApplicationdbContext context)
         {
             _context = context;
             users = new GenericRepository<Utilisateur>(_context);
+            projets = new GenericRepository<Project>(_context);
         }
 
         public void Dispose()

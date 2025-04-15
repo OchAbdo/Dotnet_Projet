@@ -112,4 +112,3 @@ C:\Users\ochab\Desktop\Projet dotnet\Projet\Projet\bin\Debug\net8.0\zh-Hans\Micr
 C:\Users\ochab\Desktop\Projet dotnet\Projet\Projet\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\ochab\Desktop\Projet dotnet\Projet\Projet\obj\Debug\net8.0\Projet.csproj.AssemblyReference.cache
 C:\Users\ochab\Desktop\Projet dotnet\Projet\Projet\obj\Debug\net8.0\Projet.csproj.Up2Date
-C:\Users\ochab\Desktop\Projet dotnet\Projet\Projet\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
