@@ -1,5 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using Projet.Models;
+using Projet.Repositories.Repositories;
+using Projet.Repositories.RepositoriesContracts;
+using Projet.Services.Services;
+using Projet.Services.ServicesContracts;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +14,10 @@ builder.Services.AddControllersWithViews();
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationdbContext>(options =>
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
+
+builder.Services.AddScoped(typeof(GenericRepositoryC<>), typeof(GenericRepository<>));
+builder.Services.AddScoped<UnitOfWorkC , UnitOfWork>();
+builder.Services.AddScoped<UtilisateurServiceC, UtilisateurService>();
 
 var app = builder.Build();
 
