@@ -10,5 +10,8 @@ namespace Projet.Models
 
         public DbSet<Utilisateur> utilisateurs { get; set; }
         public DbSet<Project>projet { get; set;}
+        public DbSet<Affectation> affectations { get; set; }
+        public DbSet<Rapport> rapports { get; set; }
+        public DbSet<Tache> taches { get; set; }
     }
 }

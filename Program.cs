@@ -18,6 +18,10 @@ builder.Services.AddDbContext<ApplicationdbContext>(options =>
 builder.Services.AddScoped(typeof(GenericRepositoryC<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<UnitOfWorkC , UnitOfWork>();
 builder.Services.AddScoped<UtilisateurServiceC, UtilisateurService>();
+builder.Services.AddScoped<ProjetServiceC, ProjetService>();
+builder.Services.AddScoped<AffectationServiceC, AffectationService>();
+builder.Services.AddScoped<RapportServiceC, RapportService>();
+builder.Services.AddScoped<TacheServiceC, TacheService>();
 
 var app = builder.Build();
 
