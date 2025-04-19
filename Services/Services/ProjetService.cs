@@ -1,4 +1,6 @@
-﻿using Projet.Models;
+﻿using System.Threading.Tasks;
+using Projet.Models;
+using Projet.Repositories.Repositories;
 using Projet.Repositories.RepositoriesContracts;
 using Projet.Services.ServicesContracts;
 
@@ -19,11 +21,6 @@ namespace Projet.Services.Services
             unitOfWorkC.SaveBase();
         }
 
-        public void DeleteProjet(Project projet)
-        {
-            unitOfWorkC.projets.Delete(projet);
-            unitOfWorkC.SaveBase();
-        }
 
         public async Task<IEnumerable<Project>> GetAllProjet()
         {
@@ -32,16 +29,28 @@ namespace Projet.Services.Services
 
         }
 
-        public async Task<Project> GetProjetByid(int id)
+        public async Task<Project> GetProjetByid(long id)
         {
             var p = await unitOfWorkC.projets.GetByIdAsync(id);
             return p;
         }
 
+ 
+
         public void UpdateProjet(Project projet)
         {
             unitOfWorkC.projets.Update(projet);
             unitOfWorkC.SaveBase();
+        }
+
+        public async Task DeleteProjetAsync(long id)
+        {
+            var pro = await unitOfWorkC.projets.GetByIdAsync(id);
+            if (pro != null)
+            {
+                unitOfWorkC.projets.Delete(pro);
+                unitOfWorkC.SaveBase();
+            }
         }
     }
 }

@@ -1,0 +1,85 @@
+﻿@model IEnumerable<Tache>
+@{
+    var projetId = ViewBag.ProjetId;
+}
+
+<style>
+    h2 {
+        font-family: Arial, sans-serif;
+        color: #333;
+    }
+
+    .btn-container {
+        margin-bottom: 15px;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 8px 12px;
+        background-color: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        margin-right: 10px;
+    }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-family: Arial, sans-serif;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f4f4f4;
+    }
+
+    tr:hover {
+        background-color: #f1f1f1;
+    }
+
+    .action-links a {
+        color: #dc3545;
+        text-decoration: none;
+    }
+
+        .action-links a:hover {
+            text-decoration: underline;
+        }
+</style>
+
+<h2>Liste des Tâches</h2>
+
+<div class="btn-container">
+    <a asp-controller="Projet" asp-action="Index" class="btn">Voir Projets</a>
+    <a asp-action="Create" asp-route-projetId="@projetId" class="btn" style="background-color: #28a745;">Ajouter une tâche</a>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var tache in Model)
+        {
+            <tr>
+                <td>@tache.titre</td>
+                <td class="action-links">
+                    <a asp-action="Delete" asp-route-id="@tache.id" asp-route-projetId="@projetId">Supprimer</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

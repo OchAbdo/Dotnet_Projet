@@ -6,9 +6,9 @@ namespace Projet.Services.ServicesContracts
     {
         public Task AddProject(Project projet);
         public Task<IEnumerable<Project>> GetAllProjet();
-        public Task<Project> GetProjetByid(int id);
+        public Task<Project> GetProjetByid(long id);
         public void UpdateProjet(Project projet);
-        public void DeleteProjet(Project projet);
+        public Task DeleteProjetAsync(long id);
 
     }
 }

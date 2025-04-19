@@ -1,4 +1,5 @@
 ﻿using Projet.Models;
+using Projet.Repositories.Repositories;
 using Projet.Repositories.RepositoriesContracts;
 using Projet.Services.ServicesContracts;
 
@@ -18,10 +19,14 @@ namespace Projet.Services.Services
             unitOfWorkC.SaveBase();
         }
 
-        public void DeleteTache(Tache tache)
+        public async Task DeleteTache(long id)
         {
-            unitOfWorkC.taches.Delete(tache);
-            unitOfWorkC.SaveBase();
+            var tac = await unitOfWorkC.taches.GetByIdAsync(id);
+            if (tac != null)
+            {
+                unitOfWorkC.taches.Delete(tac);
+                unitOfWorkC.SaveBase();
+            }
         }
 
         public async Task<IEnumerable<Tache>> GetAllTache()
@@ -38,6 +43,12 @@ namespace Projet.Services.Services
         {
             unitOfWorkC.taches.Update(tache);
             unitOfWorkC.SaveBase();
+        }
+
+        public async Task<IEnumerable<Tache>> GetByProjetIdAsync(int projetId)
+        {
+            var allTaches = await unitOfWorkC.taches.GetAllAsync();
+            return allTaches.Where(t => t.projetId == projetId);
         }
     }
 }
