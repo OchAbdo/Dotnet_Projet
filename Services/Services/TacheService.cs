@@ -34,7 +34,7 @@ namespace Projet.Services.Services
             return await unitOfWorkC.taches.GetAllAsync();
         }
 
-        public async Task<Tache> GetTacheByid(int id)
+        public async Task<Tache> GetTacheByid(long id)
         {
             return await unitOfWorkC.taches.GetByIdAsync(id);
         }

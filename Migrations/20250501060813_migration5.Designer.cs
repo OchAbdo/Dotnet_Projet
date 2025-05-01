@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Projet.Models;
 
@@ -11,9 +12,11 @@ using Projet.Models;
 namespace Projet.Migrations
 {
     [DbContext(typeof(ApplicationdbContext))]
-    partial class ApplicationdbContextModelSnapshot : ModelSnapshot
+    [Migration("20250501060813_migration5")]
+    partial class migration5
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -33,12 +36,12 @@ namespace Projet.Migrations
                     b.Property<DateTime>("dateaffectation")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<long>("tacheId")
+                    b.Property<long>("tacheid")
                         .HasColumnType("bigint");
 
                     b.HasKey("id");
 
-                    b.HasIndex("tacheId");
+                    b.HasIndex("tacheid");
 
                     b.ToTable("affectations");
                 });
@@ -163,7 +166,7 @@ namespace Projet.Migrations
                 {
                     b.HasOne("Projet.Models.Tache", "tache")
                         .WithMany("affectations")
-                        .HasForeignKey("tacheId")
+                        .HasForeignKey("tacheid")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

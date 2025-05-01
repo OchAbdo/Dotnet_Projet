@@ -20,6 +20,11 @@ namespace Projet.Models
                 .HasMany(p => p.taches)
                 .WithOne(t => t.projet)
                 .HasForeignKey(t => t.projetId);
+
+            modelBuilder.Entity<Tache>()
+                .HasMany(t => t.affectations)
+                .WithOne(a => a.tache)
+                .HasForeignKey(a => a.tacheId);
         }
     }
 

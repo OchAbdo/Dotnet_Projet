@@ -1,4 +1,5 @@
-﻿using Projet.Models;
+﻿using System.Threading.Tasks;
+using Projet.Models;
 using Projet.Repositories.RepositoriesContracts;
 using Projet.Services.ServicesContracts;
 
@@ -19,10 +20,14 @@ namespace Projet.Services.Services
             unitOfWorkC.SaveBase();
         }
 
-        public void DeleteAffectation(Affectation affectation)
+        public async Task DeleteAffectation(long id)
         {
-            unitOfWorkC.affectations.Delete(affectation);
-            unitOfWorkC.SaveBase();
+            var tac = await unitOfWorkC.affectations.GetByIdAsync(id);
+            if (tac != null)
+            {
+                unitOfWorkC.affectations.Delete(tac);
+                unitOfWorkC.SaveBase();
+            }
         }
 
         public async Task<Affectation> GetAffectationByid(int id)
@@ -35,10 +40,17 @@ namespace Projet.Services.Services
             return await unitOfWorkC.affectations.GetAllAsync();
         }
 
+        public async Task<IEnumerable<Affectation>> GetByTacheIdAsync(long tacheId)
+        {
+            var allTaches = await unitOfWorkC.affectations.GetAllAsync();
+            return allTaches.Where(a => a.tacheId == tacheId);
+        }
+
         public void UpdateAffectation(Affectation affectation)
         {
             unitOfWorkC.affectations.Update(affectation);
             unitOfWorkC.SaveBase();
         }
+
     }
 }

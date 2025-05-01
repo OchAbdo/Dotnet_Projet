@@ -16,9 +16,10 @@ namespace Projet.Models
         public DateTime datefin { set; get; }
         [Required(ErrorMessage = "Le status est requis.")]
         public string status { set; get; }
-
         public long projetId { get; set; }
         [ValidateNever]
         public Project projet { get; set; }
+        [ValidateNever]
+        public ICollection<Affectation> affectations { set; get; }
     }
 }

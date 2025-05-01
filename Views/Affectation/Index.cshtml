@@ -1,5 +1,7 @@
-﻿@model IEnumerable<Tache>
+﻿@model IEnumerable<Affectation>
+
 @{
+    var tacheId = ViewBag.TacheId;
     var projetId = ViewBag.ProjetId;
 }
 
@@ -48,9 +50,8 @@
     }
 
     .action-links a {
-        margin-right: 10px;
+        color: #dc3545;
         text-decoration: none;
-        color: #007bff;
     }
 
         .action-links a:hover {
@@ -58,32 +59,30 @@
         }
 </style>
 
-<h2>Liste des Tâches</h2>
+<h2>Liste des Affectations</h2>
 
 <div class="btn-container">
-    <a asp-controller="Projet" asp-action="Index" class="btn">Voir Projets</a>
-    <a asp-action="Create" asp-route-projetId="@projetId" class="btn" style="background-color: #28a745;">Ajouter une tâche</a>
+    <a asp-controller="Tache"  asp-action="Index" asp-route-projetId="@projetId" class="btn">Voir taches</a>
+    <a asp-action="Create" asp-route-tacheId="@tacheId" class="btn" style="background-color: #28a745;">Ajouter une affectation</a>
+
 </div>
 
 <table>
     <thead>
         <tr>
-            <th>Description</th>
+            <th>Nom Personne</th>
             <th>Actions</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var tache in Model)
+        @foreach (var affectation in Model)
         {
             <tr>
-                <td>@tache.titre</td>
+                <td>@affectation.dateaffectation</td>
                 <td class="action-links">
-                    <a asp-controller="Affectation" asp-action="Index" asp-route-tacheId="@tache.id">Voir les Affectations</a>
-                    <a asp-action="Delete" asp-route-id="@tache.id" asp-route-projetId="@projetId">Supprimer</a>
+                    <a asp-action="Delete" asp-route-id="@affectation.id" asp-route-tacheId="@tacheId">Supprimer</a>
                 </td>
-
             </tr>
         }
     </tbody>
 </table>
-

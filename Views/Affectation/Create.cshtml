@@ -1,4 +1,5 @@
-﻿@model Tache
+﻿@model Affectation
+
 
 <style>
     form {
@@ -55,31 +56,17 @@
         }
 </style>
 
-<h2>Ajouter une Tâche</h2>
+<h2>Ajouter une Affectation</h2>
 
 <form asp-action="Create">
 
-    <input type="hidden" asp-for="projetId" />
+    <input type="hidden" asp-for="tacheId" />
 
-    <label>Titre</label>
-    <input asp-for="titre" />
-    <span asp-validation-for="titre" class="text-danger"></span>
-
-    <label>Description</label>
-    <input asp-for="description" />
-    <span asp-validation-for="description" class="text-danger"></span>
-
-    <label>Date Début</label>
-    <input type="date" asp-for="datedebut" />
-    <span asp-validation-for="datedebut" class="text-danger"></span>
-
-    <label>Date Fin</label>
-    <input type="date" asp-for="datefin" />
-    <span asp-validation-for="datefin" class="text-danger"></span>
-
-    <label>Status</label>
-    <input asp-for="status" />
-    <span asp-validation-for="status" class="text-danger"></span>
-
+    <label>Date Affectation</label>
+    <input type="date" asp-for="dateaffectation" />
+    <span asp-validation-for="dateaffectation" class="text-danger"></span>
+   
     <button type="submit">Créer</button>
 </form>
+
+

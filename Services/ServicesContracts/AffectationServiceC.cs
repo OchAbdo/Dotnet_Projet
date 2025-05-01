@@ -8,6 +8,7 @@ namespace Projet.Services.ServicesContracts
         public Task<IEnumerable<Affectation>> GetAllAffectation();
         public Task<Affectation> GetAffectationByid(int id);
         public void UpdateAffectation(Affectation affectation);
-        public void DeleteAffectation(Affectation affectation);
+        public Task DeleteAffectation(long id);
+        public Task<IEnumerable<Affectation>> GetByTacheIdAsync(long tacheId);
     }
 }
