@@ -25,6 +25,12 @@ namespace Projet.Models
                 .HasMany(t => t.affectations)
                 .WithOne(a => a.tache)
                 .HasForeignKey(a => a.tacheId);
+
+            modelBuilder.Entity<Utilisateur>()
+                .HasMany(u => u.affectations)
+                .WithOne(a => a.utilisateur)
+                .HasForeignKey(a => a.utilisateurId);
+
         }
     }
 

@@ -71,6 +71,7 @@
     <thead>
         <tr>
             <th>Nom Personne</th>
+            <th>Date Affectation</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -78,6 +79,7 @@
         @foreach (var affectation in Model)
         {
             <tr>
+                <td>@affectation.utilisateurId</td>
                 <td>@affectation.dateaffectation</td>
                 <td class="action-links">
                     <a asp-action="Delete" asp-route-id="@affectation.id" asp-route-tacheId="@tacheId">Supprimer</a>

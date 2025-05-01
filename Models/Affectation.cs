@@ -11,5 +11,8 @@ namespace Projet.Models
         public long tacheId { set; get; }
         [ValidateNever]
         public Tache tache { set; get; }
+        public long utilisateurId { get; set; } 
+        [ValidateNever]
+        public Utilisateur utilisateur { set; get; }
     }
 }

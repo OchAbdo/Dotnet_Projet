@@ -2,6 +2,8 @@
 using System;
 using Projet.Repositories.RepositoriesContracts;
 using Projet.Models;
+using Microsoft.EntityFrameworkCore.Query;
+using System.Linq.Expressions;
 
 namespace Projet.Repositories.Repositories
 {
@@ -38,5 +40,7 @@ namespace Projet.Repositories.Repositories
         {
             _context.Set<T>().Update(entity);
         }
+
+      
     }
 }

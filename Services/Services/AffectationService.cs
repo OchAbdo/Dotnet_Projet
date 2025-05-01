@@ -9,6 +9,8 @@ namespace Projet.Services.Services
     {
         private readonly UnitOfWorkC unitOfWorkC;
 
+
+
         public AffectationService(UnitOfWorkC unitOfWorkC)
         {
             this.unitOfWorkC = unitOfWorkC;
@@ -42,8 +44,8 @@ namespace Projet.Services.Services
 
         public async Task<IEnumerable<Affectation>> GetByTacheIdAsync(long tacheId)
         {
-            var allTaches = await unitOfWorkC.affectations.GetAllAsync();
-            return allTaches.Where(a => a.tacheId == tacheId);
+            var allaffectation = await unitOfWorkC.affectations.GetAllAsync();
+            return allaffectation.Where(a => a.tacheId == tacheId);
         }
 
         public void UpdateAffectation(Affectation affectation)

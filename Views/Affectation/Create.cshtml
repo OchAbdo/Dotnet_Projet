@@ -1,5 +1,8 @@
 ﻿@model Affectation
 
+@{
+    var list = ViewBag.listutilisateur;
+}
 
 <style>
     form {
@@ -65,6 +68,16 @@
     <label>Date Affectation</label>
     <input type="date" asp-for="dateaffectation" />
     <span asp-validation-for="dateaffectation" class="text-danger"></span>
+
+     <label >Sélectionner une Utilisateur</label>
+     <select asp-for="utilisateurId" class="form-control">
+         <option value="">-- Choisir Utilisateur --</option>
+     @for (int i = 0; i < list.Count; i++)
+     {
+         <option value="@list[i].id">@list[i].nom @list[i].prenom</option>
+     }
+     </select>
+   
    
     <button type="submit">Créer</button>
 </form>

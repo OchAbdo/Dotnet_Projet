@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Projet.Models;
 using Projet.Services.Services;
 using Projet.Services.ServicesContracts;
@@ -10,11 +11,13 @@ namespace Projet.Controllers
     {
         private readonly AffectationServiceC _affectationServiceC;
         private readonly TacheServiceC _tacheServiceC;
+        private readonly UtilisateurServiceC _utilisateurServiceC;
 
-        public AffectationController(AffectationServiceC affectationServiceC, TacheServiceC tacheServiceC)
+        public AffectationController(AffectationServiceC affectationServiceC, TacheServiceC tacheServiceC, UtilisateurServiceC utilisateurServiceC)
         {
             this._affectationServiceC = affectationServiceC;
             _tacheServiceC = tacheServiceC;
+            _utilisateurServiceC = utilisateurServiceC;
         }
 
         public async Task<IActionResult> Index(long tacheId)
@@ -26,9 +29,11 @@ namespace Projet.Controllers
             return View(list);
         }
 
-        public IActionResult Create(int tacheId)
+        public async Task<IActionResult> Create(int tacheId)
         {
             var affectation = new Affectation { tacheId = tacheId };
+            var utilisateurs = await _utilisateurServiceC.allUtilisateurs();
+            ViewBag.listutilisateur = utilisateurs;
             return View(affectation);
         }
 
