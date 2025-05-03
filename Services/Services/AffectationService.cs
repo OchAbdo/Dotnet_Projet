@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using Projet.Models;
 using Projet.Repositories.RepositoriesContracts;
 using Projet.Services.ServicesContracts;
@@ -46,6 +47,16 @@ namespace Projet.Services.Services
         {
             var allaffectation = await unitOfWorkC.affectations.GetAllAsync();
             return allaffectation.Where(a => a.tacheId == tacheId);
+        }
+
+        public async Task<IEnumerable<Affectation>> GetByTacheIdAsyncUt(long tacheId)
+        {
+       
+            return await unitOfWorkC.affectations.FindAsync(
+                a => a.tacheId == tacheId,
+                include: q => q.Include(a => a.utilisateur)
+            );
+        
         }
 
         public void UpdateAffectation(Affectation affectation)

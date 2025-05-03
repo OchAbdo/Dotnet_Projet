@@ -18,15 +18,28 @@ namespace Projet.Services.Services
             unitOfWorkC.SaveBase();
         }
 
-        public void DeleteRapport(Rapport rapport)
+        public async Task DeleteRapportAsync(long id)
         {
-            unitOfWorkC.rapports.Delete(rapport);
-            unitOfWorkC.SaveBase();
+            var rap = await unitOfWorkC.rapports.GetByIdAsync(id);
+            if (rap != null)
+            {
+                unitOfWorkC.rapports.Delete(rap);
+                unitOfWorkC.SaveBase();
+            }
         }
 
         public async Task<IEnumerable<Rapport>> GetAllRapport()
         {
             return await unitOfWorkC.rapports.GetAllAsync();
+        }
+
+        public async Task<IEnumerable<Rapport>> GetByProjetIdAsync(long projetId)
+        {
+
+            var allrapport = await unitOfWorkC.rapports.GetAllAsync();
+            return allrapport.Where(r => r.projetId == projetId);
+          
+        
         }
 
         public async Task<Rapport> GetRapportByid(int id)
@@ -39,5 +52,7 @@ namespace Projet.Services.Services
             unitOfWorkC.rapports.Update(rapport);
             unitOfWorkC.SaveBase();
         }
+
+       
     }
 }

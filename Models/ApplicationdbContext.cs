@@ -21,6 +21,11 @@ namespace Projet.Models
                 .WithOne(t => t.projet)
                 .HasForeignKey(t => t.projetId);
 
+            modelBuilder.Entity<Project>()
+                .HasMany(p => p.rapports)
+                .WithOne(t => t.projet)
+                .HasForeignKey(t => t.projetId);
+
             modelBuilder.Entity<Tache>()
                 .HasMany(t => t.affectations)
                 .WithOne(a => a.tache)
@@ -30,6 +35,13 @@ namespace Projet.Models
                 .HasMany(u => u.affectations)
                 .WithOne(a => a.utilisateur)
                 .HasForeignKey(a => a.utilisateurId);
+
+            modelBuilder.Entity<Utilisateur>()
+               .HasMany(u => u.rapports)
+               .WithOne(a => a.utilisateur)
+               .HasForeignKey(a => a.utilisateurId);
+
+
 
         }
     }

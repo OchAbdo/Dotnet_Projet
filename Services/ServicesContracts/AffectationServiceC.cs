@@ -1,4 +1,5 @@
 ﻿using Projet.Models;
+using Projet.Repositories.RepositoriesContracts;
 
 namespace Projet.Services.ServicesContracts
 {
@@ -10,5 +11,7 @@ namespace Projet.Services.ServicesContracts
         public void UpdateAffectation(Affectation affectation);
         public Task DeleteAffectation(long id);
         public Task<IEnumerable<Affectation>> GetByTacheIdAsync(long tacheId);
+
+        public Task<IEnumerable<Affectation>> GetByTacheIdAsyncUt(long tacheId);
     }
 }

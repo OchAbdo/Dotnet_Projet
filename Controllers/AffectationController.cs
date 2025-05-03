@@ -22,7 +22,7 @@ namespace Projet.Controllers
 
         public async Task<IActionResult> Index(long tacheId)
         {
-            var list = await _affectationServiceC.GetByTacheIdAsync(tacheId);
+            var list = await _affectationServiceC.GetByTacheIdAsyncUt(tacheId);
             Tache t = await _tacheServiceC.GetTacheByid(tacheId);
             ViewBag.TacheId = tacheId;
             ViewBag.ProjetId = t.projetId;

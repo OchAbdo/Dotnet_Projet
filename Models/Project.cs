@@ -18,6 +18,8 @@ namespace Projet.Models
         public string status { set; get; }
         [ValidateNever]
         public ICollection<Tache> taches { set; get; }
+        [ValidateNever]
+        public ICollection<Rapport> rapports { set; get; }
 
     }
 }

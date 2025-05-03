@@ -9,6 +9,7 @@ namespace Projet.Controllers
     public class ProjetController : Controller
     {
         private readonly ProjetServiceC _projetService;
+        private readonly RapportServiceC _rapportServiceC;
 
         public ProjetController(ProjetServiceC projetService)
         {

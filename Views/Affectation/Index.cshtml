@@ -3,6 +3,7 @@
 @{
     var tacheId = ViewBag.TacheId;
     var projetId = ViewBag.ProjetId;
+    var utilisateurslist = ViewBag.listu;
 }
 
 <style>
@@ -79,7 +80,7 @@
         @foreach (var affectation in Model)
         {
             <tr>
-                <td>@affectation.utilisateurId</td>
+                <td>@affectation.utilisateur.nom</td>
                 <td>@affectation.dateaffectation</td>
                 <td class="action-links">
                     <a asp-action="Delete" asp-route-id="@affectation.id" asp-route-tacheId="@tacheId">Supprimer</a>

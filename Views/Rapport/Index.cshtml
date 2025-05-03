@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Project>
+﻿@model IEnumerable<Projet.Models.Rapport>
 
 <style>
     h2 {
@@ -42,34 +42,35 @@
         color: #007bff;
     }
 
-    .action-links a:hover {
-        text-decoration: underline;
-    }
+        .action-links a:hover {
+            text-decoration: underline;
+        }
 </style>
 
-<h2>Liste des Projets</h2>
+<h2>Liste des Rapports</h2>
 
-<a asp-action="Create" class="btn-ajouter">Ajouter un projet</a>
+<a asp-controller="Projet" asp-action="Index" class="btn-ajouter">Voir Projets</a>
 
 <table>
     <thead>
         <tr>
-            <th>Nom</th>
+            <th>id</th>
+            <th>Continu</th>
+            <th>Utilisateur</th>
             <th>Actions</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var projet in Model)
+        @foreach (var rapport in Model)
         {
             <tr>
-                <td>@projet.titre</td>
+                <td>@rapport.id</td>
+                <td>@rapport.continu</td>
+                <td>@rapport.utilisateurId</td>
                 <td class="action-links">
-                    <a asp-controller="Tache" asp-action="Index" asp-route-projetId="@projet.id">Voir les tâches</a>
-                    <a asp-controller="Rapport" asp-action="Index" asp-route-projetId="@projet.id">Voir les Rapports</a>
-                    <a asp-action="Delete" asp-route-id="@projet.id">Supprimer</a>
+                    <a asp-action="Delete" asp-route-id="@rapport.id" asp-route-projetId="@rapport.projetId">Supprimer</a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
-

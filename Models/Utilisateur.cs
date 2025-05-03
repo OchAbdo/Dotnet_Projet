@@ -13,6 +13,8 @@ namespace Projet.Models
         public string role { get; set; }
         [ValidateNever]
         public ICollection<Affectation> affectations { get; set; }
+        [ValidateNever]
+        public ICollection<Rapport> rapports { get; set; }
 
     }
 }
