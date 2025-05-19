@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Projet.Services.Services;
 using Projet.Services.ServicesContracts;
 
 namespace Projet.Controllers
 {
+    [Authorize]
     public class RapportController : Controller
     {
 

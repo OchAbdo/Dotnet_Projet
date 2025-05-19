@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Projet.Models;
 using Projet.Services.Services;
@@ -6,6 +7,7 @@ using Projet.Services.ServicesContracts;
 
 namespace Projet.Controllers
 {
+    [Authorize]
     public class ProjetController : Controller
     {
         private readonly ProjetServiceC _projetService;

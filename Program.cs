@@ -4,6 +4,7 @@ using Projet.Repositories.Repositories;
 using Projet.Repositories.RepositoriesContracts;
 using Projet.Services.Services;
 using Projet.Services.ServicesContracts;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +15,8 @@ builder.Services.AddControllersWithViews();
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationdbContext>(options =>
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
+
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false).AddEntityFrameworkStores<ApplicationdbContext>();
 
 builder.Services.AddScoped(typeof(GenericRepositoryC<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<UnitOfWorkC , UnitOfWork>();
@@ -42,7 +45,9 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
+app.MapRazorPages();
 
 app.MapControllerRoute(
     name: "default",

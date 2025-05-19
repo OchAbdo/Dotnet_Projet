@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
 namespace Projet.Models
 {
-    public class ApplicationdbContext : DbContext
+    public class ApplicationdbContext : IdentityDbContext
     {
         public ApplicationdbContext(DbContextOptions options) : base(options)
         {
@@ -40,6 +41,8 @@ namespace Projet.Models
                .HasMany(u => u.rapports)
                .WithOne(a => a.utilisateur)
                .HasForeignKey(a => a.utilisateurId);
+
+            base.OnModelCreating(modelBuilder);
 
 
 

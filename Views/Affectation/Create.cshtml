@@ -4,82 +4,31 @@
     var list = ViewBag.listutilisateur;
 }
 
-<style>
-    form {
-        max-width: 500px;
-        margin: 0 auto;
-        font-family: Arial, sans-serif;
-        padding: 20px;
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        background-color: #f9f9f9;
-    }
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Ajouter une Affectation</h2>
 
-    h2 {
-        text-align: center;
-        font-family: Arial, sans-serif;
-        color: #333;
-    }
+    <form asp-action="Create" class="border rounded p-4 shadow-sm bg-light mx-auto" style="max-width: 500px;">
 
-    label {
-        display: block;
-        margin-top: 10px;
-        font-weight: bold;
-        color: #333;
-    }
+        <input type="hidden" asp-for="tacheId" />
 
-    input[type="text"],
-    input[type="date"] {
-        width: 100%;
-        padding: 8px;
-        margin-top: 4px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-    }
+        <div class="mb-3">
+            <label asp-for="dateaffectation" class="form-label">Date Affectation</label>
+            <input asp-for="dateaffectation" type="date" class="form-control" />
+            <span asp-validation-for="dateaffectation" class="text-danger small"></span>
+        </div>
 
-    .text-danger {
-        color: red;
-        font-size: 0.9em;
-    }
+        <div class="mb-3">
+            <label asp-for="utilisateurId" class="form-label">Sélectionner un Utilisateur</label>
+            <select asp-for="utilisateurId" class="form-select">
+                <option value="">-- Choisir Utilisateur --</option>
+                @for (int i = 0; i < list.Count; i++)
+                {
+                    <option value="@list[i].id">@list[i].nom @list[i].prenom</option>
+                }
+            </select>
+            <span asp-validation-for="utilisateurId" class="text-danger small"></span>
+        </div>
 
-    button[type="submit"] {
-        margin-top: 20px;
-        background-color: #007bff;
-        color: white;
-        padding: 10px 15px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        width: 100%;
-    }
-
-        button[type="submit"]:hover {
-            background-color: #0056b3;
-        }
-</style>
-
-<h2>Ajouter une Affectation</h2>
-
-<form asp-action="Create">
-
-    <input type="hidden" asp-for="tacheId" />
-
-    <label>Date Affectation</label>
-    <input type="date" asp-for="dateaffectation" />
-    <span asp-validation-for="dateaffectation" class="text-danger"></span>
-
-     <label >Sélectionner une Utilisateur</label>
-     <select asp-for="utilisateurId" class="form-control">
-         <option value="">-- Choisir Utilisateur --</option>
-     @for (int i = 0; i < list.Count; i++)
-     {
-         <option value="@list[i].id">@list[i].nom @list[i].prenom</option>
-     }
-     </select>
-   
-   
-    <button type="submit">Créer</button>
-</form>
-
-
+        <button type="submit" class="btn btn-primary w-100 mt-3">Créer</button>
+    </form>
+</div>

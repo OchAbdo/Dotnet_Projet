@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Projet.Models;
@@ -7,6 +8,7 @@ using Projet.Services.ServicesContracts;
 
 namespace Projet.Controllers
 {
+    [Authorize]
     public class AffectationController : Controller
     {
         private readonly AffectationServiceC _affectationServiceC;

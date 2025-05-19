@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ochab\\Desktop\\Projet dotnet\\projet\\Projet\\Projet.csproj": {}
+    "C:\\Users\\ochab\\Desktop\\Dotnet_Projet\\Projet.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ochab\\Desktop\\Projet dotnet\\projet\\Projet\\Projet.csproj": {
+    "C:\\Users\\ochab\\Desktop\\Dotnet_Projet\\Projet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ochab\\Desktop\\Projet dotnet\\projet\\Projet\\Projet.csproj",
+        "projectUniqueName": "C:\\Users\\ochab\\Desktop\\Dotnet_Projet\\Projet.csproj",
         "projectName": "Projet",
-        "projectPath": "C:\\Users\\ochab\\Desktop\\Projet dotnet\\projet\\Projet\\Projet.csproj",
+        "projectPath": "C:\\Users\\ochab\\Desktop\\Dotnet_Projet\\Projet.csproj",
         "packagesPath": "C:\\Users\\ochab\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ochab\\Desktop\\Projet dotnet\\projet\\Projet\\obj\\",
+        "outputPath": "C:\\Users\\ochab\\Desktop\\Dotnet_Projet\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -50,6 +50,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.11, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[8.0.11, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.12, )"
@@ -60,11 +68,23 @@
               "target": "Package",
               "version": "[8.0.12, )"
             },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[8.0.11, )"
+            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.12, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[8.0.7, )"
             },
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",

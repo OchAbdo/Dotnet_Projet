@@ -5,87 +5,42 @@
     var projetId = ViewBag.ProjetId;
     var utilisateurslist = ViewBag.listu;
 }
+<div class="container mt-5">
+    <h2 class="mb-4 text-center">Liste des Affectations</h2>
 
-<style>
-    h2 {
-        font-family: Arial, sans-serif;
-        color: #333;
-    }
+    <div class="mb-3">
+        <a asp-controller="Tache" asp-action="Index" asp-route-projetId="@projetId" class="btn btn-primary me-2">
+            Voir Tâches
+        </a>
+        <a asp-action="Create" asp-route-tacheId="@tacheId" class="btn btn-success">
+            Ajouter une Affectation
+        </a>
+    </div>
 
-    .btn-container {
-        margin-bottom: 15px;
-    }
-
-    .btn {
-        display: inline-block;
-        padding: 8px 12px;
-        background-color: #007bff;
-        color: white;
-        text-decoration: none;
-        border-radius: 4px;
-        margin-right: 10px;
-    }
-
-        .btn:hover {
-            background-color: #0056b3;
-        }
-
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        font-family: Arial, sans-serif;
-    }
-
-    th, td {
-        border: 1px solid #ddd;
-        padding: 10px;
-        text-align: left;
-    }
-
-    th {
-        background-color: #f4f4f4;
-    }
-
-    tr:hover {
-        background-color: #f1f1f1;
-    }
-
-    .action-links a {
-        color: #dc3545;
-        text-decoration: none;
-    }
-
-        .action-links a:hover {
-            text-decoration: underline;
-        }
-</style>
-
-<h2>Liste des Affectations</h2>
-
-<div class="btn-container">
-    <a asp-controller="Tache"  asp-action="Index" asp-route-projetId="@projetId" class="btn">Voir taches</a>
-    <a asp-action="Create" asp-route-tacheId="@tacheId" class="btn" style="background-color: #28a745;">Ajouter une affectation</a>
-
-</div>
-
-<table>
-    <thead>
-        <tr>
-            <th>Nom Personne</th>
-            <th>Date Affectation</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var affectation in Model)
-        {
+    <table class="table table-bordered table-hover">
+        <thead class="table-light">
             <tr>
-                <td>@affectation.utilisateur.nom</td>
-                <td>@affectation.dateaffectation</td>
-                <td class="action-links">
-                    <a asp-action="Delete" asp-route-id="@affectation.id" asp-route-tacheId="@tacheId">Supprimer</a>
-                </td>
+                <th>Nom Personne</th>
+                <th>Date Affectation</th>
+                <th>Actions</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var affectation in Model)
+            {
+                <tr>
+                    <td>@affectation.utilisateur.nom</td>
+                    <td>@affectation.dateaffectation.ToString("dd/MM/yyyy")</td>
+                    <td>
+                        <a asp-action="Delete"
+                           asp-route-id="@affectation.id"
+                           asp-route-tacheId="@tacheId"
+                           class="btn btn-sm btn-outline-danger">
+                            Supprimer
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
