@@ -3,16 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\ochab\\Desktop\\Dotnet_Projet\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{78C69A33-9936-8263-BCD4-61D6598486FC}|Projet.csproj|c:\\users\\ochab\\desktop\\dotnet_projet\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{78C69A33-9936-8263-BCD4-61D6598486FC}|Projet.csproj|solutionrelative:views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78C69A33-9936-8263-BCD4-61D6598486FC}|Projet.csproj|c:\\users\\ochab\\desktop\\dotnet_projet\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{78C69A33-9936-8263-BCD4-61D6598486FC}|Projet.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78C69A33-9936-8263-BCD4-61D6598486FC}|Projet.csproj|c:\\users\\ochab\\desktop\\dotnet_projet\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{78C69A33-9936-8263-BCD4-61D6598486FC}|Projet.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{78C69A33-9936-8263-BCD4-61D6598486FC}|Projet.csproj|c:\\users\\ochab\\desktop\\dotnet_projet\\views\\affectation\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{78C69A33-9936-8263-BCD4-61D6598486FC}|Projet.csproj|solutionrelative:views\\affectation\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{78C69A33-9936-8263-BCD4-61D6598486FC}|Projet.csproj|c:\\users\\ochab\\desktop\\dotnet_projet\\views\\projet\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{78C69A33-9936-8263-BCD4-61D6598486FC}|Projet.csproj|solutionrelative:views\\projet\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{78C69A33-9936-8263-BCD4-61D6598486FC}|Projet.csproj|c:\\users\\ochab\\desktop\\dotnet_projet\\views\\affectation\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{78C69A33-9936-8263-BCD4-61D6598486FC}|Projet.csproj|solutionrelative:views\\affectation\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78C69A33-9936-8263-BCD4-61D6598486FC}|Projet.csproj|c:\\users\\ochab\\desktop\\dotnet_projet\\views\\projet\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{78C69A33-9936-8263-BCD4-61D6598486FC}|Projet.csproj|solutionrelative:views\\projet\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,7 +42,46 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_LoginPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\ochab\\Desktop\\Dotnet_Projet\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_LoginPartial.cshtml",
+              "ToolTip": "C:\\Users\\ochab\\Desktop\\Dotnet_Projet\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_LoginPartial.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-01T09:40:20.802Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\ochab\\Desktop\\Dotnet_Projet\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\ochab\\Desktop\\Dotnet_Projet\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-01T09:39:49.512Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\ochab\\Desktop\\Dotnet_Projet\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\ochab\\Desktop\\Dotnet_Projet\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-06-01T09:11:49.227Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\ochab\\Desktop\\Dotnet_Projet\\Views\\Projet\\Create.cshtml",
               "RelativeDocumentMoniker": "Views\\Projet\\Create.cshtml",
@@ -38,25 +89,24 @@
               "RelativeToolTip": "Views\\Projet\\Create.cshtml",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-19T11:52:15.108Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-19T11:52:15.108Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\ochab\\Desktop\\Dotnet_Projet\\Views\\Affectation\\Create.cshtml",
               "RelativeDocumentMoniker": "Views\\Affectation\\Create.cshtml",
               "ToolTip": "C:\\Users\\ochab\\Desktop\\Dotnet_Projet\\Views\\Affectation\\Create.cshtml",
               "RelativeToolTip": "Views\\Affectation\\Create.cshtml",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-05-19T11:49:41.884Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\ochab\\Desktop\\Dotnet_Projet\\Views\\Affectation\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Affectation\\Index.cshtml",
